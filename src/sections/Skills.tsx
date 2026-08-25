@@ -15,7 +15,7 @@ const groups = [
   {
     title: 'Backend',
     skills: [
-      { name: 'Node.js', level: 85 },
+      { name: 'Node.js', level: 80 },
       { name: 'FastAPI', level: 81 },
       { name: 'Python', level: 76 },
       { name: 'MongoDB', level: 78 },

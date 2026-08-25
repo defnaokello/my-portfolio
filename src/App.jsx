@@ -1,5 +1,5 @@
 import './ChatBot.css';   // <-- Import the new chatbot CSS
-import myPhoto from './assets/image1.png';
+import myPhoto from './assets/logo.png';
 import React, { useState, useEffect, useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import { motion, AnimatePresence } from 'framer-motion';

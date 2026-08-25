@@ -1,6 +1,6 @@
 import { Code2, Lightbulb, Palette, Users } from 'lucide-react'
 import { Reveal, SectionHeading } from '../components/Reveal'
-import portrait from '../assets/portrait.png'
+import portrait from '../assets/pic1.png'
 
 const highlights = [
   {
