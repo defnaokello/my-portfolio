@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { ArrowRight, Github, Instagram, Linkedin, Mail, Sparkles } from 'lucide-react'
-import portrait from '../assets/portrait.png'
+import portrait from '../assets/ChatGPT Image Aug 28, 2026, 09_07_14 AM.png'
 
 const stats = [
   { value: '2+', label: 'Years Experience' },
