@@ -37,7 +37,7 @@ const projects: Project[] = [
   },
   {
     title: 'Infinity.OR Portfolio',
-    description: 'My own portfolio website showcasing my projects, skills and design philosophy.',
+    description: 'My first portfolio website reminds me of where I started, how much I have learned, and how far I have come as a developer.',
     tags: ['React.js', 'Framer Motion', 'UI/UX'],
     live: 'https://righan.netlify.app',
     cover: 'brand',

@@ -35,18 +35,21 @@ export default function About() {
         />
 
         <div className="grid items-center gap-12 lg:grid-cols-[0.85fr_1.15fr]">
-          <Reveal className="relative mx-auto w-full max-w-sm">
+          <div className="relative mx-auto w-full max-w-sm">
             <div className="absolute -inset-2 rounded-3xl bg-gradient-to-br from-blue-600/30 to-violet-600/30 blur-lg" />
             <img
               src={portrait}
               alt="Okello Righan portrait"
+              loading="eager"
+              fetchPriority="high"
+              decoding="sync"
               className="relative w-full rounded-3xl border border-white/10 object-cover shadow-2xl"
             />
             <div className="absolute -bottom-5 -right-5 rounded-2xl bg-gradient-to-r from-blue-600 to-violet-600 px-5 py-4 text-white shadow-xl">
               <p className="text-2xl font-extrabold">2+</p>
               <p className="text-xs font-medium text-blue-100">Years of Experience</p>
             </div>
-          </Reveal>
+          </div>
 
           <div>
             <Reveal>

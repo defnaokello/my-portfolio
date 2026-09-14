@@ -30,8 +30,15 @@ export default function Navbar() {
       }`}
     >
       <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
-        <a href="#top" className="flex items-center gap-2.5">
-          <img src={logo} alt="Infinity.OR logo" className="h-9 w-9 rounded-lg object-cover" />
+        <a href="src/assets/logo.png" className="flex items-center gap-2.5">
+          <img
+            src={logo}
+            alt="Infinity.OR logo"
+            loading="eager"
+            fetchPriority="high"
+            decoding="sync"
+            className="h-9 w-9 rounded-lg object-cover"
+          />
           <span className="bg-gradient-to-r from-blue-400 to-violet-400 bg-clip-text text-lg font-bold text-transparent">
             Infinity.OR
           </span>
