@@ -54,7 +54,7 @@ export default function About() {
           <div>
             <Reveal>
               <p className="leading-relaxed text-slate-300">
-                I'm a full-stack developer with a passion for creating intuitive, dynamic user
+                I'm a Front-End developer with a passion for creating intuitive, dynamic user
                 experiences. With expertise in modern JavaScript frameworks and a keen eye for
                 design, I bridge the gap between engineering and aesthetics.
               </p>

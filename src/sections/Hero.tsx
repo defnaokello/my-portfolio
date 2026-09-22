@@ -72,7 +72,7 @@ export default function Hero() {
             className="mt-5 flex items-center gap-2 text-lg font-semibold text-slate-200 sm:text-xl"
           >
             <Sparkles size={20} className="text-blue-400" />
-            Full-Stack Developer &amp; Web Designer
+            Front-End Developer &amp; Web Designer
           </motion.p>
 
           <motion.p

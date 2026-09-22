@@ -5,7 +5,6 @@ import Services from '../sections/Services'
 import Skills from '../sections/Skills'
 import Projects from '../sections/Projects'
 import Process from '../sections/Process'
-import Testimonials from '../sections/Testimonials'
 import FAQ from '../sections/FAQ'
 import Contact from '../sections/Contact'
 import Footer from '../sections/Footer'
@@ -56,7 +55,6 @@ export default function Home() {
         <Skills />
         <Projects />
         <Process />
-        <Testimonials />
         <CTABanner />
         <FAQ />
         <Contact />

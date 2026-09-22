@@ -33,6 +33,7 @@ const projects: Project[] = [
     description:
       'Interactive data visualization dashboard with WebSocket updates and custom-built charts.',
     tags: ['React.js', 'WebSockets', 'Data Viz'],
+    live: 'https://intexclo.netlify.app',
     cover: 'dashboard',
   },
   {
