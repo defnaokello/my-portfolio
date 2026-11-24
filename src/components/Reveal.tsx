@@ -36,7 +36,7 @@ export function SectionHeading({
 }) {
   return (
     <Reveal className="mx-auto mb-14 max-w-2xl text-center">
-      <span className="mb-3 inline-block rounded-full border border-blue-500/30 bg-blue-500/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-blue-400">
+      <span className="mb-3 inline-block rounded-full border border-[#FF2A85]/30 bg-[#FF2A85]/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-[#FF72AD]">
         {eyebrow}
       </span>
       <h2 className="text-3xl font-bold text-white sm:text-4xl">{title}</h2>

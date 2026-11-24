@@ -9,7 +9,7 @@ export default function Footer() {
           <div className="flex items-center gap-3">
             <img src={logo} alt="Infinity.OR" className="h-10 w-10 rounded-lg object-cover" />
             <div>
-              <p className="bg-gradient-to-r from-blue-400 to-violet-400 bg-clip-text text-lg font-bold text-transparent">
+              <p className="text-lg font-bold text-white">
                 Infinity.OR
               </p>
               <p className="text-xs text-slate-500">Building digital experiences that matter.</p>
@@ -29,7 +29,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={s.label}
-                className="rounded-full border border-white/10 bg-white/5 p-2.5 text-slate-400 transition-all hover:scale-110 hover:border-blue-500/50 hover:text-blue-400"
+                className="rounded-full border border-white/10 bg-white/5 p-2.5 text-slate-400 transition-all hover:scale-110 hover:border-[#FF2A85]/50 hover:text-[#FF72AD]"
               >
                 <s.icon size={17} />
               </a>
@@ -38,7 +38,7 @@ export default function Footer() {
 
           <a
             href="#top"
-            className="inline-flex items-center gap-2 rounded-full border border-white/10 px-4 py-2 text-sm text-slate-400 transition-colors hover:border-blue-500/50 hover:text-blue-400"
+            className="inline-flex items-center gap-2 rounded-full border border-white/10 px-4 py-2 text-sm text-slate-400 transition-colors hover:border-[#FF2A85]/50 hover:text-[#FF72AD]"
           >
             Back to top <ArrowUp size={15} />
           </a>

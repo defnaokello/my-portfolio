@@ -1,6 +1,8 @@
-import { motion } from 'framer-motion'
+import { motion, useMotionValue, useSpring } from 'framer-motion'
 import { ArrowRight, Github, Instagram, Linkedin, Mail, Sparkles } from 'lucide-react'
 import portrait from '../assets/ChatGPT Image Aug 28, 2026, 09_07_14 AM.png'
+import { useEffect } from 'react'
+import MagneticButton from '../components/MagneticButton'
 
 const stats = [
   { value: '2+', label: 'Years Experience' },
@@ -22,12 +24,27 @@ const marquee = [
 ]
 
 export default function Hero() {
+  const mouseX = useMotionValue(0)
+  const mouseY = useMotionValue(0)
+  const parallaxX = useSpring(mouseX, { stiffness: 100, damping: 24 })
+  const parallaxY = useSpring(mouseY, { stiffness: 100, damping: 24 })
+
+  useEffect(() => {
+    const handleMove = (event: MouseEvent) => {
+      if (!window.matchMedia('(pointer:fine)').matches) return
+      mouseX.set((event.clientX / window.innerWidth - 0.5) * 18)
+      mouseY.set((event.clientY / window.innerHeight - 0.5) * 18)
+    }
+    window.addEventListener('mousemove', handleMove)
+    return () => window.removeEventListener('mousemove', handleMove)
+  }, [mouseX, mouseY])
+
   return (
     <section id="top" className="relative overflow-hidden pb-16 pt-32 sm:pt-40">
       {/* Background effects */}
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute -top-32 left-1/4 h-96 w-96 rounded-full bg-blue-600/20 blur-[120px]" />
-        <div className="absolute right-1/4 top-40 h-96 w-96 rounded-full bg-violet-600/20 blur-[120px]" />
+        <div className="absolute -top-32 left-1/4 h-96 w-96 rounded-full bg-[#FF2A85]/10 blur-[120px]" />
+        <div className="absolute right-1/4 top-40 h-96 w-96 rounded-full bg-[#1A2544]/60 blur-[120px]" />
         <div
           className="absolute inset-0 opacity-[0.15]"
           style={{
@@ -60,7 +77,7 @@ export default function Hero() {
             className="text-4xl font-extrabold leading-tight text-white sm:text-5xl lg:text-6xl"
           >
             Hi, I'm{' '}
-            <span className="bg-gradient-to-r from-blue-400 via-indigo-400 to-violet-400 bg-clip-text text-transparent">
+            <span className="text-white">
               Okello Righan
             </span>
           </motion.h1>
@@ -71,7 +88,7 @@ export default function Hero() {
             transition={{ duration: 0.7, delay: 0.2 }}
             className="mt-5 flex items-center gap-2 text-lg font-semibold text-slate-200 sm:text-xl"
           >
-            <Sparkles size={20} className="text-blue-400" />
+            <Sparkles size={20} className="text-[#FF2A85]" />
             Front-End Developer &amp; Web Designer
           </motion.p>
 
@@ -92,19 +109,19 @@ export default function Hero() {
             transition={{ duration: 0.7, delay: 0.4 }}
             className="mt-8 flex flex-wrap items-center gap-4"
           >
-            <a
+            <MagneticButton
               href="#projects"
-              className="group inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-blue-600 to-violet-600 px-7 py-3.5 font-semibold text-white shadow-lg shadow-blue-600/30 transition-all hover:scale-105 hover:shadow-blue-600/50"
+              className="group inline-flex items-center gap-2 rounded-full bg-[#FF2A85] px-7 py-3.5 font-semibold text-white shadow-lg shadow-pink-600/30 transition-all hover:scale-105 hover:bg-[#D91A6B] hover:shadow-pink-600/50"
             >
               View My Work
               <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
-            </a>
-            <a
+            </MagneticButton>
+            <MagneticButton
               href="#contact"
-              className="rounded-full border border-white/20 px-7 py-3.5 font-semibold text-slate-200 transition-all hover:border-blue-400 hover:text-blue-400"
+              className="rounded-full border border-white/20 px-7 py-3.5 font-semibold text-slate-200 transition-all hover:border-[#FF2A85] hover:text-[#FF72AD]"
             >
               Get in Touch
-            </a>
+            </MagneticButton>
             <div className="flex items-center gap-2">
               {socials.map((s) => (
                 <a
@@ -113,7 +130,7 @@ export default function Hero() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={s.label}
-                  className="rounded-full border border-white/10 bg-white/5 p-2.5 text-slate-400 transition-all hover:border-blue-500/50 hover:text-blue-400"
+                  className="rounded-full border border-white/10 bg-white/5 p-2.5 text-slate-400 transition-all hover:border-[#FF2A85]/50 hover:text-[#FF72AD]"
                 >
                   <s.icon size={18} />
                 </a>
@@ -129,28 +146,26 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.25 }}
           className="relative mx-auto w-full max-w-sm"
         >
-          <div className="absolute -inset-3 rounded-[2rem] bg-gradient-to-br from-blue-600/40 via-transparent to-violet-600/40 blur-xl" />
+          <div className="absolute -inset-3 rounded-[2rem] bg-gradient-to-br from-white/10 via-transparent to-[#FF2A85]/30 blur-xl" />
           <div className="relative overflow-hidden rounded-[2rem] border border-white/10 shadow-2xl">
             <img src={portrait} alt="Okello Righan" className="h-auto w-full object-cover" />
-            <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#050810] via-[#050810]/60 to-transparent p-5 pt-16">
+            <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#060B19] via-[#060B19]/60 to-transparent p-5 pt-16">
               <p className="font-bold text-white">Okello Righan</p>
-              <p className="text-sm text-blue-300">Founder — Infinity.OR</p>
+              <p className="text-sm text-[#FF72AD]">Founder — Infinity.OR</p>
             </div>
           </div>
           <motion.div
-            animate={{ y: [0, -10, 0] }}
-            transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-            className="absolute -right-4 top-8 rounded-2xl border border-white/10 bg-[#0b1220]/90 px-4 py-3 shadow-xl backdrop-blur"
+            style={{ x: parallaxX, y: parallaxY }}
+            className="absolute -right-4 top-8 rounded-2xl border border-[#FF2A85]/40 bg-[#121E3B]/90 px-4 py-3 shadow-xl backdrop-blur"
           >
-            <p className="text-2xl font-bold text-blue-400">12+</p>
+            <p className="text-2xl font-bold text-white">12+</p>
             <p className="text-xs text-slate-400">Projects shipped</p>
           </motion.div>
           <motion.div
-            animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
-            className="absolute -left-4 bottom-16 rounded-2xl border border-white/10 bg-[#0b1220]/90 px-4 py-3 shadow-xl backdrop-blur"
+            style={{ x: parallaxX, y: parallaxY }}
+            className="absolute -left-4 bottom-16 rounded-2xl border border-[#FF2A85] bg-[#121E3B]/90 px-4 py-3 shadow-[0_0_24px_rgba(255,42,133,0.18)] backdrop-blur"
           >
-            <p className="text-2xl font-bold text-violet-400">100%</p>
+            <p className="text-2xl font-bold text-white">100%</p>
             <p className="text-xs text-slate-400">Client satisfaction</p>
           </motion.div>
         </motion.div>
@@ -167,7 +182,7 @@ export default function Hero() {
         >
           {stats.map((s) => (
             <div key={s.label} className="text-center">
-              <p className="bg-gradient-to-r from-blue-400 to-violet-400 bg-clip-text text-3xl font-extrabold text-transparent sm:text-4xl">
+              <p className="text-3xl font-extrabold text-white sm:text-4xl">
                 {s.value}
               </p>
               <p className="mt-1 text-sm text-slate-400">{s.label}</p>
@@ -186,7 +201,7 @@ export default function Hero() {
           {[...marquee, ...marquee].map((t, i) => (
             <span key={i} className="flex items-center gap-10 whitespace-nowrap text-sm font-semibold uppercase tracking-widest text-slate-500">
               {t}
-              <span className="h-1.5 w-1.5 rounded-full bg-blue-500/60" />
+              <span className="h-1.5 w-1.5 rounded-full bg-[#FF2A85]/70" />
             </span>
           ))}
         </motion.div>

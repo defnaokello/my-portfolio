@@ -55,7 +55,7 @@ export default function FAQ() {
             <Reveal key={i} delay={i * 0.04}>
               <div
                 className={`overflow-hidden rounded-2xl border transition-colors ${
-                  open === i ? 'border-blue-500/40 bg-white/[0.05]' : 'border-white/10 bg-white/[0.03]'
+                  open === i ? 'border-[#FF2A85]/50 bg-[#121E3B]' : 'border-white/10 bg-[#121E3B]/80'
                 }`}
               >
                 <button
@@ -65,7 +65,7 @@ export default function FAQ() {
                   <span className="font-semibold text-white">{f.q}</span>
                   <ChevronDown
                     size={18}
-                    className={`shrink-0 text-blue-400 transition-transform duration-300 ${
+                    className={`shrink-0 text-[#FF72AD] transition-transform duration-300 ${
                       open === i ? 'rotate-180' : ''
                     }`}
                   />

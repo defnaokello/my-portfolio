@@ -1,5 +1,5 @@
-import { ExternalLink, Github, Mic } from 'lucide-react'
-import { Reveal, SectionHeading } from '../components/Reveal'
+import { ArrowUpRight, ExternalLink, Github, Mic } from 'lucide-react'
+import { Reveal } from '../components/Reveal'
 import intexLogo from '../assets/intex.png'
 import brandLogo from '../assets/logo.png'
 import clothlogo from '../assets/cloth.png'
@@ -60,17 +60,22 @@ function Cover({
   // VOICE OF POWER
   if (kind === 'mic') {
     return (
-      <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-amber-300 via-yellow-400 to-amber-500">
-        <div className="flex flex-col items-center gap-3 text-slate-900">
-          <Mic
-            size={56}
-            strokeWidth={1.6}
-            className="transition-transform duration-500 group-hover:scale-110"
-          />
-
-          <span className="text-center text-xl font-extrabold tracking-tight">
-            Voice of Power
-          </span>
+      <div className="relative flex h-full w-full items-center justify-center overflow-hidden bg-gradient-to-br from-[#F8FAFC] to-[#E8EDF5] p-4">
+        <div className="absolute -right-8 -top-12 h-36 w-36 rounded-full bg-[#FF2A85]/10 blur-2xl" />
+        <div className="relative flex h-full w-full items-center justify-center rounded-xl border border-white bg-white/80 shadow-sm">
+          <div className="flex items-center gap-4">
+            <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#060B19] text-white shadow-lg shadow-slate-900/15 transition-transform duration-500 group-hover:scale-105">
+              <Mic size={26} strokeWidth={1.7} />
+            </div>
+            <div>
+              <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#D91A6B]">
+                Listen. Learn. Grow.
+              </p>
+              <p className="mt-1 text-base font-bold tracking-tight text-[#0A1128] sm:text-lg">
+                Voice of Power
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     )
@@ -79,11 +84,12 @@ function Cover({
   // INTEX CONSTRUCTION
   if (kind === 'intex') {
     return (
-      <div className="flex h-full w-full items-center justify-center bg-white p-6 sm:p-8">
+      <div className="relative flex h-full w-full items-center justify-center overflow-hidden bg-gradient-to-br from-[#F8FAFC] to-[#E8EDF5] p-4 sm:p-5">
+        <div className="absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-[#D91A6B]/40 to-transparent" />
         <img
           src={intexLogo}
           alt={title}
-          className="h-auto max-h-24 w-auto max-w-[85%] object-contain transition-transform duration-500 group-hover:scale-110"
+          className="relative h-full w-full rounded-xl border border-white bg-white object-cover object-center shadow-sm transition-transform duration-500 group-hover:scale-[1.03]"
         />
       </div>
     )
@@ -92,40 +98,22 @@ function Cover({
   // INFINITY.OR CLOTHING BRAND
   if (kind === 'clothlogo') {
     return (
-      <div className="relative flex h-full w-full items-center justify-center overflow-hidden bg-black">
-        {/* Luxury background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-black via-slate-950 to-slate-900" />
-
-        {/* Subtle background glow */}
-        <div className="absolute left-1/2 top-1/2 h-40 w-40 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/5 blur-3xl" />
-
-        {/* Logo container */}
-        <div className="relative flex h-full w-full items-center justify-center px-6 py-8 sm:px-8">
-          <img
-            src={clothlogo}
-            alt={`${title} logo`}
-            className="
-              h-auto
-              max-h-28
-              w-auto
-              max-w-[78%]
-              object-contain
-              transition-all
-              duration-500
-              group-hover:scale-110
-              sm:max-h-32
-              sm:max-w-[75%]
-              md:max-h-36
-              md:max-w-[70%]
-            "
-          />
-        </div>
-
-        {/* Brand name */}
-        <div className="absolute bottom-4 left-0 right-0 text-center">
-          <span className="text-xs font-medium uppercase tracking-[0.3em] text-white/60">
-            Infinity.OR
-          </span>
+      <div className="relative flex h-full w-full items-center justify-center overflow-hidden bg-[#060B19]">
+        <img
+          src={clothlogo}
+          alt={`${title} collection`}
+          className="absolute inset-0 h-full w-full object-cover object-center opacity-75 transition-transform duration-700 group-hover:scale-[1.04]"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#060B19]/75 via-[#060B19]/15 to-[#060B19]/35" />
+        <div className="relative z-10 flex h-full w-full items-end justify-between px-5 py-4 sm:px-6">
+          <div className="rounded-xl border border-white/15 bg-[#060B19]/45 px-3 py-2 backdrop-blur-sm">
+            <span className="block text-[9px] font-medium uppercase tracking-[0.25em] text-white/70">
+              New collection
+            </span>
+            <span className="mt-0.5 block font-serif text-lg text-white sm:text-xl">
+              Infinity.OR
+            </span>
+          </div>
         </div>
       </div>
     )
@@ -133,172 +121,124 @@ function Cover({
 
   // PERSONAL PORTFOLIO
   return (
-    <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-[#0b1220] to-[#141b30] p-6 sm:p-8">
-      <img
-        src={brandLogo}
-        alt={title}
-        className="h-auto max-h-28 w-auto max-w-[80%] rounded-xl object-contain transition-transform duration-500 group-hover:scale-110"
-      />
+    <div className="relative flex h-full w-full items-center justify-center overflow-hidden bg-gradient-to-br from-[#0D1730] via-[#172544] to-[#0A1128] p-4">
+      <div className="absolute -bottom-12 -left-8 h-36 w-36 rounded-full bg-[#FF2A85]/15 blur-3xl" />
+      <div className="relative flex h-full w-full items-center justify-center rounded-xl border border-white/10 bg-white/[0.04]">
+        <div className="flex h-20 w-20 items-center justify-center rounded-2xl bg-white p-2 shadow-xl shadow-black/20 transition-transform duration-500 group-hover:scale-105 sm:h-24 sm:w-24">
+          <img
+            src={brandLogo}
+            alt={title}
+            className="h-full w-full rounded-xl object-contain"
+          />
+        </div>
+        <span className="absolute bottom-3 right-4 text-[9px] font-semibold uppercase tracking-[0.22em] text-white/55">
+          Personal portfolio
+        </span>
+      </div>
     </div>
   )
 }
 
 export default function Projects() {
   return (
-    <section id="projects" className="relative py-24">
+    <section id="projects" className="relative overflow-hidden py-16 sm:py-20">
+      <div className="pointer-events-none absolute -right-36 top-28 h-96 w-96 rounded-full bg-[#FF2A85]/[0.06] blur-[120px]" />
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        {/* Section heading */}
-        <SectionHeading
-          eyebrow="Featured Projects"
-          title="Work that speaks for itself"
-          subtitle="A selection of recent projects showcasing full-stack development and UI/UX design."
-        />
+        <Reveal className="mb-9 flex flex-col gap-5 sm:mb-10 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <span className="mb-3 inline-flex rounded-full border border-[#FF2A85]/30 bg-[#FF2A85]/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-[#FF72AD]">
+              Selected work · 01—04
+            </span>
+            <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+              Work that speaks for itself
+            </h2>
+            <p className="mt-2 max-w-xl text-sm text-slate-400 sm:text-base">
+              A few digital experiences built with care, from first sketch to launch.
+            </p>
+          </div>
+          <a
+            href="https://github.com/defna2018"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex w-fit items-center gap-2 rounded-full border border-white/15 px-4 py-2 text-sm font-medium text-slate-300 transition-all hover:border-[#FF2A85]/60 hover:text-white"
+          >
+            <Github size={16} />
+            GitHub
+            <ArrowUpRight size={14} className="text-[#FF72AD]" />
+          </a>
+        </Reveal>
 
-        {/* Projects grid */}
-        <div className="mx-auto grid max-w-5xl gap-5 md:grid-cols-2">
+        <div className="mx-auto grid max-w-5xl gap-4 sm:grid-cols-2">
           {projects.map((p, i) => (
-            <Reveal
-              key={p.title}
-              delay={(i % 2) * 0.1}
-            >
+            <Reveal key={p.title} delay={i * 0.06}>
               <article
-                className="
-                  group
-                  h-full
-                  overflow-hidden
-                  rounded-3xl
-                  border
-                  border-white/10
-                  bg-white/[0.03]
-                  transition-all
-                  duration-300
-                  hover:-translate-y-1.5
-                  hover:border-blue-500/40
-                  hover:shadow-2xl
-                  hover:shadow-blue-600/10
-                "
+                data-cursor="View"
+                className="group relative h-full overflow-hidden rounded-2xl border border-white/[0.09] bg-gradient-to-b from-[#14203D] to-[#0D1730] transition-all duration-300 hover:-translate-y-1 hover:border-[#FF2A85]/55 hover:shadow-xl hover:shadow-pink-900/20 sm:h-56 sm:flex"
               >
-                {/* Project cover */}
-                <div className="relative h-44 overflow-hidden sm:h-48">
-                  <div className="h-full transition-transform duration-500 group-hover:scale-105">
+                <div className="relative h-40 overflow-hidden sm:order-2 sm:h-full sm:w-[48%]">
+                  <div className="h-full transition-transform duration-500 group-hover:scale-[1.04]">
                     <Cover
                       kind={p.cover}
                       title={p.title}
                     />
                   </div>
-
-                  {/* Live site button */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0D1730]/40 via-transparent to-transparent opacity-70 sm:bg-gradient-to-l sm:from-transparent sm:to-[#0D1730]/25" />
+                  <span className="absolute left-3 top-3 rounded-full border border-white/15 bg-[#060B19]/55 px-2.5 py-1 text-[10px] font-semibold tracking-widest text-white/80 backdrop-blur">
+                    0{i + 1}
+                  </span>
                   {p.live && (
                     <a
                       href={p.live}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="
-                        absolute
-                        right-4
-                        top-4
-                        rounded-full
-                        bg-[#050810]/80
-                        p-2.5
-                        text-white
-                        opacity-0
-                        backdrop-blur
-                        transition-all
-                        duration-300
-                        hover:bg-blue-600
-                        group-hover:opacity-100
-                      "
+                      className="absolute right-3 top-3 rounded-full border border-white/15 bg-[#060B19]/65 p-2 text-white/80 opacity-100 backdrop-blur transition-all duration-300 hover:border-[#FF2A85] hover:bg-[#FF2A85] hover:text-white sm:opacity-0 sm:group-hover:opacity-100"
                       aria-label={`Open ${p.title} live demo`}
                     >
-                      <ExternalLink size={18} />
+                      <ArrowUpRight size={16} />
                     </a>
                   )}
                 </div>
 
-                {/* Project information */}
-                <div className="p-5">
-                  <h3 className="text-lg font-bold text-white">
+                <div className="flex h-44 flex-col p-4 sm:order-1 sm:h-full sm:w-[52%] sm:p-5">
+                  <h3 className="text-sm font-semibold leading-snug text-white sm:text-base">
                     {p.title}
                   </h3>
-
-                  <p className="mt-2 text-sm leading-relaxed text-slate-400">
+                  <p className="mt-1.5 line-clamp-2 text-xs leading-relaxed text-slate-400">
                     {p.description}
                   </p>
-
-                  {/* Technology tags */}
-                  <div className="mt-4 flex flex-wrap gap-2">
-                    {p.tags.map((t) => (
+                  <div className="mt-2.5 flex flex-wrap gap-1.5">
+                    {p.tags.slice(0, 3).map((t) => (
                       <span
                         key={t}
-                        className="
-                          rounded-full
-                          bg-blue-500/10
-                          px-3
-                          py-1
-                          text-xs
-                          font-medium
-                          text-blue-300
-                        "
+                        className="rounded-full border border-white/[0.08] bg-white/[0.04] px-2 py-1 text-[10px] font-medium text-slate-300"
                       >
                         {t}
                       </span>
                     ))}
+                    {p.tags.length > 3 && (
+                      <span className="rounded-full border border-[#FF2A85]/20 bg-[#FF2A85]/[0.07] px-2 py-1 text-[10px] font-medium text-[#FF72AD]">
+                        +{p.tags.length - 3}
+                      </span>
+                    )}
                   </div>
-
-                  {/* Live site link */}
-                  {p.live && (
+                  <div className="mt-auto border-t border-white/[0.07] pt-3">
+                    {p.live && (
                     <a
                       href={p.live}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="
-                        mt-5
-                        inline-flex
-                        items-center
-                        gap-1.5
-                        text-sm
-                        font-semibold
-                        text-blue-400
-                        transition-colors
-                        hover:text-blue-300
-                      "
+                      className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#FF72AD] transition-colors hover:text-white"
                     >
-                      View live site
-                      <ExternalLink size={14} />
+                      Explore project
+                      <ExternalLink size={12} />
                     </a>
-                  )}
+                    )}
+                  </div>
                 </div>
               </article>
             </Reveal>
           ))}
         </div>
-
-        {/* GitHub button */}
-        <Reveal className="mt-10 text-center">
-          <a
-            href="https://github.com/defna2018"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="
-              inline-flex
-              items-center
-              gap-2
-              rounded-full
-              border
-              border-white/20
-              px-7
-              py-3
-              font-semibold
-              text-slate-200
-              transition-all
-              hover:border-blue-400
-              hover:text-blue-400
-            "
-          >
-            <Github size={18} />
-            View More on GitHub
-          </a>
-        </Reveal>
       </div>
     </section>
   )

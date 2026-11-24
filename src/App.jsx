@@ -1,5 +1,6 @@
 import './ChatBot.css';   // <-- Import the new chatbot CSS
 import myPhoto from './assets/logo.png';
+import CustomCursor from './components/CustomCursor';
 import React, { useState, useEffect, useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -754,9 +755,11 @@ const App = () => {
       <Projects darkMode={darkMode} />
       <Contact darkMode={darkMode} />
       <Footer />
+      <CustomCursor />
       <ChatBot darkMode={darkMode} />
     </div>
   );
 };
 
 export default App;
+

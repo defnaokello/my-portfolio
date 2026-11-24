@@ -36,7 +36,7 @@ export default function About() {
 
         <div className="grid items-center gap-12 lg:grid-cols-[0.85fr_1.15fr]">
           <div className="relative mx-auto w-full max-w-sm">
-            <div className="absolute -inset-2 rounded-3xl bg-gradient-to-br from-blue-600/30 to-violet-600/30 blur-lg" />
+            <div className="absolute -inset-2 rounded-3xl bg-gradient-to-br from-white/10 to-[#FF2A85]/30 blur-lg" />
             <img
               src={portrait}
               alt="Okello Righan portrait"
@@ -45,9 +45,9 @@ export default function About() {
               decoding="sync"
               className="relative w-full rounded-3xl border border-white/10 object-cover shadow-2xl"
             />
-            <div className="absolute -bottom-5 -right-5 rounded-2xl bg-gradient-to-r from-blue-600 to-violet-600 px-5 py-4 text-white shadow-xl">
+            <div className="absolute -bottom-5 -right-5 rounded-2xl bg-[#FF2A85] px-5 py-4 text-white shadow-xl shadow-pink-600/20">
               <p className="text-2xl font-extrabold">2+</p>
-              <p className="text-xs font-medium text-blue-100">Years of Experience</p>
+              <p className="text-xs font-medium text-white">Years of Experience</p>
             </div>
           </div>
 
@@ -69,8 +69,8 @@ export default function About() {
             <div className="mt-8 grid gap-4 sm:grid-cols-2">
               {highlights.map((h, i) => (
                 <Reveal key={h.title} delay={i * 0.08}>
-                  <div className="group h-full rounded-2xl border border-white/10 bg-white/[0.03] p-5 transition-all hover:border-blue-500/40 hover:bg-white/[0.06]">
-                    <div className="mb-3 inline-flex rounded-xl bg-gradient-to-br from-blue-600/20 to-violet-600/20 p-2.5 text-blue-400">
+                  <div className="group h-full rounded-2xl border border-white/10 bg-[#121E3B]/80 p-5 transition-all hover:border-[#FF2A85]/50 hover:bg-white/[0.06]">
+                    <div className="mb-3 inline-flex rounded-xl bg-[#FF2A85]/15 p-2.5 text-[#FF72AD]">
                       <h.icon size={20} />
                     </div>
                     <h3 className="font-semibold text-white">{h.title}</h3>

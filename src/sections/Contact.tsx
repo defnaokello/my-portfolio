@@ -65,7 +65,7 @@ const Contact = ({ darkMode }: { darkMode?: boolean }) => {
 
   return (
     <section id="contact" className="relative py-24">
-      <div className="pointer-events-none absolute bottom-0 left-1/3 h-96 w-96 rounded-full bg-violet-600/10 blur-[120px]" />
+      <div className="pointer-events-none absolute bottom-0 left-1/3 h-96 w-96 rounded-full bg-[#FF2A85]/10 blur-[120px]" />
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <SectionHeading
           eyebrow="Contact"
@@ -78,14 +78,14 @@ const Contact = ({ darkMode }: { darkMode?: boolean }) => {
             <div className="flex h-full flex-col gap-4">
               <a
                 href={`mailto:${EMAIL}`}
-                className="group flex items-center gap-4 rounded-2xl border border-white/10 bg-white/[0.03] p-5 transition-all hover:border-blue-500/40"
+                className="group flex items-center gap-4 rounded-2xl border border-white/10 bg-[#121E3B]/80 p-5 transition-all hover:border-[#FF2A85]/50"
               >
-                <span className="rounded-xl bg-blue-500/15 p-3 text-blue-400">
+                <span className="rounded-xl bg-[#FF2A85]/15 p-3 text-[#FF72AD]">
                   <Mail size={20} />
                 </span>
                 <span>
                   <span className="block text-xs uppercase tracking-wider text-slate-500">Email</span>
-                  <span className="font-medium text-slate-200 group-hover:text-blue-300">{EMAIL}</span>
+                  <span className="font-medium text-slate-200 group-hover:text-[#FF72AD]">{EMAIL}</span>
                 </span>
               </a>
 
@@ -93,7 +93,7 @@ const Contact = ({ darkMode }: { darkMode?: boolean }) => {
                 href="https://wa.me/254748608448"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center gap-4 rounded-2xl border border-white/10 bg-white/[0.03] p-5 transition-all hover:border-emerald-500/40"
+                className="group flex items-center gap-4 rounded-2xl border border-white/10 bg-[#121E3B]/80 p-5 transition-all hover:border-[#FF2A85]/50"
               >
                 <span className="rounded-xl bg-emerald-500/15 p-3 text-emerald-400">
                   <MessageCircle size={20} />
@@ -105,7 +105,7 @@ const Contact = ({ darkMode }: { darkMode?: boolean }) => {
               </a>
 
               <div className="flex items-center gap-4 rounded-2xl border border-white/10 bg-white/[0.03] p-5">
-                <span className="rounded-xl bg-violet-500/15 p-3 text-violet-400">
+                <span className="rounded-xl bg-[#FF2A85]/15 p-3 text-[#FF72AD]">
                   <Clock size={20} />
                 </span>
                 <span>
@@ -126,7 +126,7 @@ const Contact = ({ darkMode }: { darkMode?: boolean }) => {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={s.label}
-                    className="flex flex-1 items-center justify-center gap-2 rounded-2xl border border-white/10 bg-white/[0.03] py-3.5 text-sm font-medium text-slate-300 transition-all hover:border-blue-500/40 hover:text-blue-300"
+                    className="flex flex-1 items-center justify-center gap-2 rounded-2xl border border-white/10 bg-[#121E3B]/80 py-3.5 text-sm font-medium text-slate-300 transition-all hover:border-[#FF2A85]/50 hover:text-[#FF72AD]"
                   >
                     <s.icon size={16} /> {s.label}
                   </a>
@@ -139,7 +139,7 @@ const Contact = ({ darkMode }: { darkMode?: boolean }) => {
             <form
               ref={formRef}
               onSubmit={handleSubmit}
-              className="rounded-3xl border border-white/10 bg-white/[0.03] p-7 sm:p-8"
+              className="rounded-3xl border border-white/10 bg-[#121E3B]/80 p-7 sm:p-8"
             >
               <div className="grid gap-5 sm:grid-cols-2">
                 <div>
@@ -150,7 +150,7 @@ const Contact = ({ darkMode }: { darkMode?: boolean }) => {
                     value={formData.name}
                     onChange={handleChange}
                     placeholder="Jane Doe"
-                    className="w-full rounded-xl border border-white/10 bg-[#0b1220] px-4 py-3 text-sm text-white placeholder-slate-500 outline-none transition-colors focus:border-blue-500"
+                    className="w-full rounded-xl border border-white/10 bg-[#060B19] px-4 py-3 text-sm text-white placeholder-slate-500 outline-none transition-colors focus:border-[#FF2A85]"
                   />
                 </div>
                 <div>
@@ -162,7 +162,7 @@ const Contact = ({ darkMode }: { darkMode?: boolean }) => {
                     value={formData.email}
                     onChange={handleChange}
                     placeholder="jane@company.com"
-                    className="w-full rounded-xl border border-white/10 bg-[#0b1220] px-4 py-3 text-sm text-white placeholder-slate-500 outline-none transition-colors focus:border-blue-500"
+                    className="w-full rounded-xl border border-white/10 bg-[#060B19] px-4 py-3 text-sm text-white placeholder-slate-500 outline-none transition-colors focus:border-[#FF2A85]"
                   />
                 </div>
               </div>
@@ -174,7 +174,7 @@ const Contact = ({ darkMode }: { darkMode?: boolean }) => {
                   value={formData.subject}
                   onChange={handleChange}
                   placeholder="e.g. New website for my business"
-                  className="w-full rounded-xl border border-white/10 bg-[#0b1220] px-4 py-3 text-sm text-white placeholder-slate-500 outline-none transition-colors focus:border-blue-500"
+                  className="w-full rounded-xl border border-white/10 bg-[#060B19] px-4 py-3 text-sm text-white placeholder-slate-500 outline-none transition-colors focus:border-[#FF2A85]"
                 />
               </div>
 
@@ -187,7 +187,7 @@ const Contact = ({ darkMode }: { darkMode?: boolean }) => {
                   value={formData.message}
                   onChange={handleChange}
                   placeholder="Tell me about your project, goals and timeline..."
-                  className="w-full resize-none rounded-xl border border-white/10 bg-[#0b1220] px-4 py-3 text-sm text-white placeholder-slate-500 outline-none transition-colors focus:border-blue-500"
+                  className="w-full resize-none rounded-xl border border-white/10 bg-[#060B19] px-4 py-3 text-sm text-white placeholder-slate-500 outline-none transition-colors focus:border-[#FF2A85]"
                 />
               </div>
 
@@ -197,7 +197,7 @@ const Contact = ({ darkMode }: { darkMode?: boolean }) => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-blue-600 to-violet-600 px-6 py-3.5 font-semibold text-white shadow-lg shadow-blue-600/25 transition-all hover:scale-[1.02] hover:shadow-blue-600/40 disabled:cursor-not-allowed disabled:opacity-70"
+                className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#FF2A85] px-6 py-3.5 font-semibold text-white shadow-lg shadow-pink-600/25 transition-all hover:scale-[1.02] hover:bg-[#D91A6B] hover:shadow-pink-600/40 disabled:cursor-not-allowed disabled:opacity-70"
               >
                 <Send size={18} />
                 {isSubmitting ? 'Sending...' : 'Send Message'}

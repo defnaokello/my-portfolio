@@ -1,5 +1,7 @@
 import { ClipboardList, Code2, Rocket, Search, ShieldCheck, TestTubes, Palette } from 'lucide-react'
 import { Reveal, SectionHeading } from '../components/Reveal'
+import { motion, useScroll, useSpring } from 'framer-motion'
+import { useRef } from 'react'
 
 const steps = [
   { icon: Search, title: 'Discovery', text: 'We dig into your goals, audience and requirements.' },
@@ -12,9 +14,16 @@ const steps = [
 ]
 
 export default function Process() {
+  const timelineRef = useRef<HTMLDivElement>(null)
+  const { scrollYProgress } = useScroll({
+    target: timelineRef,
+    offset: ['start 80%', 'end 60%'],
+  })
+  const lineProgress = useSpring(scrollYProgress, { stiffness: 120, damping: 30, restDelta: 0.001 })
+
   return (
     <section id="process" className="relative py-24">
-      <div className="pointer-events-none absolute left-1/2 top-0 h-72 w-72 -translate-x-1/2 rounded-full bg-blue-600/10 blur-[100px]" />
+      <div className="pointer-events-none absolute left-1/2 top-0 h-72 w-72 -translate-x-1/2 rounded-full bg-[#FF2A85]/10 blur-[100px]" />
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <SectionHeading
           eyebrow="My Process"
@@ -22,8 +31,12 @@ export default function Process() {
           subtitle="A proven workflow — you stay in the loop at every step, from first call to post-launch support."
         />
 
-        <div className="relative">
-          <div className="absolute left-[27px] top-2 hidden h-[calc(100%-16px)] w-px bg-gradient-to-b from-blue-500/60 via-violet-500/60 to-transparent md:left-1/2 md:block" />
+        <div ref={timelineRef} className="relative">
+          <div className="absolute left-[27px] top-2 hidden h-[calc(100%-16px)] w-px bg-white/10 md:left-1/2 md:block" />
+          <motion.div
+            style={{ scaleY: lineProgress }}
+            className="absolute left-[27px] top-2 hidden h-[calc(100%-16px)] w-px origin-top bg-gradient-to-b from-[#FF2A85] via-[#F72585] to-[#FF2A85]/30 md:left-1/2 md:block"
+          />
           <div className="space-y-6">
             {steps.map((s, i) => (
               <Reveal key={s.title} delay={i * 0.05}>
@@ -35,15 +48,15 @@ export default function Process() {
                   }`}
                 >
                   <div
-                    className={`z-10 flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-600 to-violet-600 text-white shadow-lg shadow-blue-600/25 md:absolute md:top-0 ${
+                    className={`z-10 flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-[#FF2A85] text-white shadow-lg shadow-pink-600/25 md:absolute md:top-0 ${
                       i % 2 === 0 ? 'md:-right-7' : 'md:-left-7'
                     }`}
                   >
                     <s.icon size={22} />
                   </div>
-                  <div className="flex-1 rounded-2xl border border-white/10 bg-white/[0.03] p-5 transition-colors hover:border-blue-500/40">
+                  <div className="flex-1 rounded-2xl border border-white/10 bg-[#121E3B]/80 p-5 transition-colors hover:border-[#FF2A85]/50">
                     <div className={`flex items-center gap-2 ${i % 2 === 0 ? 'md:justify-end' : ''}`}>
-                      <span className="text-xs font-bold uppercase tracking-widest text-blue-400">
+                      <span className="text-xs font-bold uppercase tracking-widest text-[#FF72AD]">
                         Step {i + 1}
                       </span>
                     </div>

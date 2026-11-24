@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Menu, X } from 'lucide-react'
 import logo from '../assets/logo.png'
+import MagneticButton from '../components/MagneticButton'
 
 const links = [
   { label: 'About', href: '#about' },
@@ -25,7 +26,7 @@ export default function Navbar() {
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'border-b border-white/10 bg-[#050810]/85 backdrop-blur-xl'
+          ? 'border-b border-white/10 bg-[#060B19]/85 backdrop-blur-xl'
           : 'bg-transparent'
       }`}
     >
@@ -39,7 +40,7 @@ export default function Navbar() {
             decoding="sync"
             className="h-9 w-9 rounded-lg object-cover"
           />
-          <span className="bg-gradient-to-r from-blue-400 to-violet-400 bg-clip-text text-lg font-bold text-transparent">
+          <span className="text-lg font-bold text-white transition-colors hover:text-[#FF72AD]">
             Infinity.OR
           </span>
         </a>
@@ -49,17 +50,17 @@ export default function Navbar() {
             <a
               key={l.href}
               href={l.href}
-              className="text-sm font-medium text-slate-300 transition-colors hover:text-white"
+              className="text-sm font-medium text-slate-300 transition-colors hover:text-[#FF72AD]"
             >
               {l.label}
             </a>
           ))}
-          <a
+          <MagneticButton
             href="#contact"
-            className="rounded-full bg-gradient-to-r from-blue-600 to-violet-600 px-5 py-2 text-sm font-semibold text-white shadow-lg shadow-blue-600/25 transition-transform hover:scale-105"
+            className="rounded-full bg-[#FF2A85] px-5 py-2 text-sm font-semibold text-white shadow-lg shadow-pink-600/25 transition-transform hover:scale-105 hover:bg-[#D91A6B]"
           >
             Hire Me
-          </a>
+          </MagneticButton>
         </div>
 
         <button
@@ -72,13 +73,13 @@ export default function Navbar() {
       </nav>
 
       {open && (
-        <div className="border-t border-white/10 bg-[#050810]/95 px-6 py-4 backdrop-blur-xl md:hidden">
+        <div className="border-t border-white/10 bg-[#060B19]/95 px-6 py-4 backdrop-blur-xl md:hidden">
           {links.map((l) => (
             <a
               key={l.href}
               href={l.href}
               onClick={() => setOpen(false)}
-              className="block py-2.5 text-sm font-medium text-slate-300 hover:text-white"
+              className="block py-2.5 text-sm font-medium text-slate-300 hover:text-[#FF72AD]"
             >
               {l.label}
             </a>
@@ -86,7 +87,7 @@ export default function Navbar() {
           <a
             href="#contact"
             onClick={() => setOpen(false)}
-            className="mt-2 block rounded-full bg-gradient-to-r from-blue-600 to-violet-600 px-5 py-2.5 text-center text-sm font-semibold text-white"
+            className="mt-2 block rounded-full bg-[#FF2A85] px-5 py-2.5 text-center text-sm font-semibold text-white hover:bg-[#D91A6B]"
           >
             Hire Me
           </a>
